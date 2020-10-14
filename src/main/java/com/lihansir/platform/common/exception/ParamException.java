@@ -31,6 +31,7 @@ public class ParamException extends RuntimeException {
 
     public ParamException(String paramName, String errMsg) {
         super(errMsg);
+        this.code = CommonCode.PARAM_CHECK_ERROR.getCode();
         this.msg = "Parameter：【" + paramName + "】" + errMsg;
     }
 
@@ -41,6 +42,7 @@ public class ParamException extends RuntimeException {
 
     public ParamException(Throwable cause, String msg) {
         super(cause);
+        this.code = CommonCode.PARAM_CHECK_ERROR.getCode();
         this.msg = msg;
     }
 
