@@ -14,35 +14,39 @@ import com.lihansir.platform.common.code.RestCode;
  *
  * @author <a href="https://www.lihansir.com">Li Han</a>
  * @date Created in 2020/10/03 10:45
- **/
+ */
 public class ParamException extends RuntimeException {
 
     private static final long serialVersionUID = 3496354170767422449L;
 
-    private int code;
+    private int code = CommonCode.PARAM_CHECK_ERROR.getCode();
 
     private String msg;
 
     public ParamException(String msg) {
         super(msg);
-        this.code = CommonCode.PARAM_CHECK_ERROR.getCode();
         this.msg = msg;
     }
 
     public ParamException(String paramName, String errMsg) {
         super(errMsg);
-        this.code = CommonCode.PARAM_CHECK_ERROR.getCode();
         this.msg = "Parameter：【" + paramName + "】" + errMsg;
     }
 
     public ParamException(RestCode restCode) {
         super(restCode.getMsg());
+        this.code = restCode.getCode();
         this.msg = restCode.getMsg();
+    }
+
+    public ParamException(int code, String errMsg) {
+        super(errMsg);
+        this.code = code;
+        this.msg = errMsg;
     }
 
     public ParamException(Throwable cause, String msg) {
         super(cause);
-        this.code = CommonCode.PARAM_CHECK_ERROR.getCode();
         this.msg = msg;
     }
 

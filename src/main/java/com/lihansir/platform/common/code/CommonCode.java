@@ -11,7 +11,7 @@ package com.lihansir.platform.common.code;
  *
  * @author <a href="https://www.lihansir.com">Li Han</a>
  * @date Created in 2020/10/03 10:16
- **/
+ */
 public enum CommonCode implements RestCode {
 
     OK(200, "success"),

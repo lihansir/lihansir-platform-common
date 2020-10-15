@@ -6,7 +6,6 @@ package com.lihansir.platform.common.rest;
 
 import com.lihansir.platform.common.code.CommonCode;
 import com.lihansir.platform.common.code.RestCode;
-
 import java.io.Serializable;
 
 /**
@@ -16,7 +15,7 @@ import java.io.Serializable;
  *
  * @author <a href="https://www.lihansir.com">Li Han</a>
  * @date Created in 2020/10/03 10:08
- **/
+ */
 public class RestResult<T> implements Serializable {
 
     private static final long serialVersionUID = 892309986077110782L;

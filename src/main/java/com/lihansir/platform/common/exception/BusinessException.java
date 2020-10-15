@@ -14,7 +14,7 @@ import com.lihansir.platform.common.code.RestCode;
  *
  * @author <a href="https://www.lihansir.com">Li Han</a>
  * @date Created in 2020/10/03 10:44
- **/
+ */
 public class BusinessException extends RuntimeException {
 
     private static final long serialVersionUID = -2714635136932653280L;

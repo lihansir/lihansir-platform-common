@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author <a href="https://www.lihansir.com">Li Han</a>
  * @date Created in 2020/10/03 10:52
- **/
+ */
 public class PageResult<T> implements Serializable {
 
     private static final long serialVersionUID = -3806254586122133426L;
