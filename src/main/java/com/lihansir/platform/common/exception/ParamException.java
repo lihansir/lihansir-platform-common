@@ -29,8 +29,9 @@ public class ParamException extends RuntimeException {
     }
 
     public ParamException(String paramName, String errMsg) {
-        super(errMsg);
+        super("Parameter：【" + paramName + "】" + errMsg);
         this.msg = "Parameter：【" + paramName + "】" + errMsg;
+
     }
 
     public ParamException(RestCode restCode) {

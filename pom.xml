@@ -6,7 +6,7 @@
 
     <groupId>com.lihansir.platform</groupId>
     <artifactId>lihansir-platform-common</artifactId>
-    <version>1.2.5</version>
+    <version>1.2.6</version>
 
     <name>${project.artifactId}</name>
     <url>https://github.com/lihansir/lihansir-platform-common</url>
