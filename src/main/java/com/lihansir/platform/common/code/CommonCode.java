@@ -43,12 +43,10 @@ public enum CommonCode implements RestCode {
         this.msg = msg;
     }
 
-    @Override
     public int getCode() {
         return this.code;
     }
 
-    @Override
     public String getMsg() {
         return this.msg;
     }
