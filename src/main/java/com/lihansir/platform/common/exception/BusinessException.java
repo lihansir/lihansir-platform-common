@@ -8,12 +8,9 @@ import com.lihansir.platform.common.code.CommonCode;
 import com.lihansir.platform.common.code.RestCode;
 
 /**
- * <p>
  * General service exception
- * </p>
  *
  * @author <a href="https://www.lihansir.com">Li Han</a>
- * @date Created in 2020/10/03 10:44
  */
 public class BusinessException extends RuntimeException {
 

@@ -14,22 +14,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * <p>
  * Servlet util
- * </p>
  *
  * @author <a href="https://www.lihansir.com">Li Han</a>
- * @date Created in 2020/10/03 11:30
  */
 public class ServletUtil {
 
     /**
-     * <p>
      * Get String parameter
-     * </p>
-     *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 11:45
+     * 
      * @param name
      *            parameter name
      * @return parameter value
@@ -39,12 +32,8 @@ public class ServletUtil {
     }
 
     /**
-     * <p>
      * Get String parameter
-     * </p>
-     *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 11:44
+     * 
      * @param name
      *            parameter name
      * @param defaultValue
@@ -56,12 +45,8 @@ public class ServletUtil {
     }
 
     /**
-     * <p>
      * Get Integer parameter
-     * </p>
      *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 11:43
      * @param name
      *            parameter name
      * @return parameter value
@@ -71,12 +56,8 @@ public class ServletUtil {
     }
 
     /**
-     * <p>
      * Get Integer parameter
-     * </p>
      *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 11:42
      * @param name
      *            parameter name
      * @param defaultValue
@@ -88,12 +69,8 @@ public class ServletUtil {
     }
 
     /**
-     * <p>
      * Get request
-     * </p>
-     *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 11:41
+     * 
      * @return http request
      */
     public static HttpServletRequest getRequest() {
@@ -101,12 +78,8 @@ public class ServletUtil {
     }
 
     /**
-     * <p>
      * Get response
-     * </p>
-     *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 11:41
+     * 
      * @return http response
      */
     public static HttpServletResponse getResponse() {
@@ -114,12 +87,8 @@ public class ServletUtil {
     }
 
     /**
-     * <p>
      * Get session
-     * </p>
-     *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 11:41
+     * 
      * @return http session
      */
     public static HttpSession getSession() {
@@ -127,12 +96,8 @@ public class ServletUtil {
     }
 
     /**
-     * <p>
      * Get request attributes
-     * </p>
-     *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 11:40
+     * 
      * @return Servlet request attributes
      */
     public static ServletRequestAttributes getRequestAttributes() {
@@ -141,12 +106,8 @@ public class ServletUtil {
     }
 
     /**
-     * <p>
      * Judge whether it is ajax request
-     * </p>
-     *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 11:37
+     * 
      * @param request
      *            http request
      * @return true if is ajax request

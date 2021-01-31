@@ -5,12 +5,9 @@
 package com.lihansir.platform.common.constant;
 
 /**
- * <p>
  * http response status
- * </p>
  *
  * @author <a href="https://www.lihansir.com">Li Han</a>
- * @date Created in 2020/10/03 10:36
  */
 public class HttpStatus {
 

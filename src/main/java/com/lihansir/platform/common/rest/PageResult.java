@@ -8,64 +8,36 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * <p>
  * Paging results object
- * </p>
  *
  * @author <a href="https://www.lihansir.com">Li Han</a>
- * @date Created in 2020/10/03 10:52
  */
 public class PageResult<T> implements Serializable {
 
     private static final long serialVersionUID = -3806254586122133426L;
 
     /**
-     * <p>
      * Total data
-     * </p>
-     *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 10:54
      */
-    private float count;
+    private float total;
 
     /**
-     * <p>
      * Current page number
-     * </p>
-     *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 10:54
      */
-    private int pageNo;
+    private int currentPage;
 
     /**
-     * <p>
      * Current number of items per page
-     * </p>
-     *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 10:54
      */
     private int pageSize;
 
     /**
-     * <p>
      * PageCount
-     * </p>
-     *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 10:54
      */
     private int totalPage;
 
     /**
-     * <p>
      * data
-     * </p>
-     *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 10:54
      */
     private List<T> data;
 
@@ -73,20 +45,20 @@ public class PageResult<T> implements Serializable {
         return serialVersionUID;
     }
 
-    public float getCount() {
-        return count;
+    public float getTotal() {
+        return total;
     }
 
-    public void setCount(float count) {
-        this.count = count;
+    public void setTotal(float total) {
+        this.total = total;
     }
 
-    public int getPageNo() {
-        return pageNo;
+    public int getCurrentPage() {
+        return currentPage;
     }
 
-    public void setPageNo(int pageNo) {
-        this.pageNo = pageNo;
+    public void setCurrentPage(int currentPage) {
+        this.currentPage = currentPage;
     }
 
     public int getPageSize() {
@@ -119,21 +91,21 @@ public class PageResult<T> implements Serializable {
 
     public static final class PageResultBuilder<T> {
 
-        private float count;
-        private int pageNo;
+        private float total;
+        private int currentPage;
         private int pageSize;
         private int totalPage;
         private List<T> data;
 
         private PageResultBuilder() {}
 
-        public PageResultBuilder<T> count(float count) {
-            this.count = count;
+        public PageResultBuilder<T> total(float total) {
+            this.total = total;
             return this;
         }
 
-        public PageResultBuilder<T> pageNo(int pageNo) {
-            this.pageNo = pageNo;
+        public PageResultBuilder<T> currentPage(int currentPage) {
+            this.currentPage = currentPage;
             return this;
         }
 
@@ -154,8 +126,8 @@ public class PageResult<T> implements Serializable {
 
         public PageResult<T> build() {
             PageResult<T> pageResult = new PageResult<>();
-            pageResult.setCount(count);
-            pageResult.setPageNo(pageNo);
+            pageResult.setTotal(total);
+            pageResult.setCurrentPage(currentPage);
             pageResult.setPageSize(pageSize);
             pageResult.setTotalPage(totalPage);
             pageResult.setData(data);

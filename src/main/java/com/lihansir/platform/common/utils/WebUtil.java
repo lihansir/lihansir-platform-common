@@ -13,24 +13,17 @@ import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 
 /**
- * <p>
  * Web Tools
- * </p>
  *
  * @author <a href="https://www.lihansir.com">Li Han</a>
- * @date Created in 2020/10/03 11:10
  */
 public class WebUtil {
 
-    private static final Logger log = LoggerFactory.getLogger(WebUtil.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(WebUtil.class);
 
     /**
-     * <p>
      * Return json result
-     * </p>
      *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 11:13
      * @param response
      *            http response
      * @param result
@@ -43,17 +36,13 @@ public class WebUtil {
             out.write(JSONObject.toJSONBytes(result));
             out.flush();
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+            LOGGER.error(e.getMessage(), e);
         }
     }
 
     /**
-     * <p>
      * Get post string data from request
-     * </p>
      *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 11:28
      * @param request
      *            http request
      * @return post string data
@@ -68,18 +57,14 @@ public class WebUtil {
                 return getRequestPostStr(request);
             }
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+            LOGGER.error(e.getMessage(), e);
         }
         return "";
     }
 
     /**
-     * <p>
      * Get post string data from request
-     * </p>
      *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 11:21
      * @param request
      *            http request
      * @return post string data
@@ -94,18 +79,14 @@ public class WebUtil {
         try {
             resultStr = new String(buffer, charEncoding);
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+            LOGGER.error(e.getMessage(), e);
         }
         return resultStr;
     }
 
     /**
-     * <p>
      * Get post data from request
-     * </p>
      *
-     * @author <a href="https://www.lihansir.com">Li Han</a>
-     * @date Created in 2020/10/03 11:17
      * @param request
      *            http request
      * @return data byte array
@@ -126,7 +107,7 @@ public class WebUtil {
                 i += readLen;
             }
         } catch (Exception e) {
-            log.error(e.getMessage(), e);
+            LOGGER.error(e.getMessage(), e);
         }
         return buffer;
     }

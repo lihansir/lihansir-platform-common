@@ -5,34 +5,31 @@
 package com.lihansir.platform.common.code;
 
 /**
- * <p>
  * Common Response Code
- * </p>
  *
  * @author <a href="https://www.lihansir.com">Li Han</a>
- * @date Created in 2020/10/03 10:16
  */
 public enum CommonCode implements RestCode {
 
     OK(200, "success"),
 
-    ERROR_TOKEN(4001, "Token verification failed"),
+    FAILED(500, "failed"),
 
-    PARAM_CHECK_ERROR(4002, "Parameter verification failed"),
+    ERROR_TOKEN(40001, "Token verification failed"),
 
-    REQUEST_METHOD_ERROR(4003, "Unsupported request method"),
+    PARAM_CHECK_ERROR(40002, "Parameter verification failed"),
 
-    ERROR_URL(4004, "Request path error"),
+    REQUEST_METHOD_ERROR(40003, "Unsupported request method"),
 
-    BUSINESS_EXECUTE_ERROR(4005, "Business logic processing exception"),
+    ERROR_URL(40004, "Request path error"),
 
-    ILLEGAL_ARGUMENT_ERROR(4006, "Illegal argument error"),
+    BUSINESS_EXECUTE_ERROR(40005, "Business logic processing exception"),
 
-    SERVER_ERROR(5000, "Server error"),
+    ILLEGAL_ARGUMENT_ERROR(40006, "Illegal argument error"),
 
-    REDIRECT_ERROR(5001, "Error in request redirection"),
+    SERVER_ERROR(50000, "Server error"),
 
-    FAILED(50000, "failed");
+    REDIRECT_ERROR(50001, "Error in request redirection");
 
     private final int code;
 

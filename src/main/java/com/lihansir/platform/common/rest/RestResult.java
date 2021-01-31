@@ -9,26 +9,23 @@ import com.lihansir.platform.common.code.RestCode;
 import java.io.Serializable;
 
 /**
- * <p>
  * Unified Response Object
- * </p>
  *
  * @author <a href="https://www.lihansir.com">Li Han</a>
- * @date Created in 2020/10/03 10:08
  */
 public class RestResult<T> implements Serializable {
 
     private static final long serialVersionUID = 892309986077110782L;
 
     private int code;
-    private String msg;
+    private String message;
     private T data;
 
     public RestResult() {}
 
-    public RestResult(int code, String msg, T data) {
+    public RestResult(int code, String message, T data) {
         this.code = code;
-        this.setMsg(msg);
+        this.setMessage(message);
         this.data = data;
     }
 
@@ -37,9 +34,9 @@ public class RestResult<T> implements Serializable {
         this.data = data;
     }
 
-    public RestResult(int code, String msg) {
+    public RestResult(int code, String message) {
         this.code = code;
-        this.setMsg(msg);
+        this.setMessage(message);
     }
 
     public int getCode() {
@@ -50,12 +47,12 @@ public class RestResult<T> implements Serializable {
         this.code = code;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public T getData() {
@@ -67,52 +64,52 @@ public class RestResult<T> implements Serializable {
     }
 
     public boolean ok() {
-        return this.code == 0 || this.code == 200;
+        return this.code == CommonCode.OK.getCode();
     }
 
     @Override
     public String toString() {
-        return "RestResult{" + "code=" + code + ", message='" + msg + '\'' + ", data=" + data + '}';
+        return "RestResult{" + "code=" + code + ", message='" + message + '\'' + ", data=" + data + '}';
     }
 
     public static <T> RestResult<T> success() {
-        return RestResult.<T>builder().code(CommonCode.OK.getCode()).msg(CommonCode.OK.getMsg()).build();
+        return RestResult.<T>builder().code(CommonCode.OK.getCode()).message(CommonCode.OK.getMsg()).build();
     }
 
     public static <T> RestResult<T> success(T data) {
-        return RestResult.<T>builder().code(CommonCode.OK.getCode()).data(data).msg(CommonCode.OK.getMsg()).build();
+        return RestResult.<T>builder().code(CommonCode.OK.getCode()).data(data).message(CommonCode.OK.getMsg()).build();
     }
 
     public static <T> RestResult<T> success(int code, T data) {
-        return RestResult.<T>builder().code(code).data(data).msg(CommonCode.OK.getMsg()).build();
+        return RestResult.<T>builder().code(code).data(data).message(CommonCode.OK.getMsg()).build();
     }
 
     public static <T> RestResult<T> failed() {
-        return RestResult.<T>builder().code(CommonCode.FAILED.getCode()).msg(CommonCode.FAILED.getMsg()).build();
+        return RestResult.<T>builder().code(CommonCode.FAILED.getCode()).message(CommonCode.FAILED.getMsg()).build();
     }
 
     public static <T> RestResult<T> failed(String errMsg) {
-        return RestResult.<T>builder().code(CommonCode.FAILED.getCode()).msg(errMsg).build();
+        return RestResult.<T>builder().code(CommonCode.FAILED.getCode()).message(errMsg).build();
     }
 
     public static <T> RestResult<T> failed(int code, T data) {
-        return RestResult.<T>builder().code(code).data(data).msg(CommonCode.FAILED.getMsg()).build();
+        return RestResult.<T>builder().code(code).data(data).message(CommonCode.FAILED.getMsg()).build();
     }
 
     public static <T> RestResult<T> failed(RestCode restCode, T data) {
-        return RestResult.<T>builder().code(restCode.getCode()).data(data).msg(restCode.getMsg()).build();
+        return RestResult.<T>builder().code(restCode.getCode()).data(data).message(restCode.getMsg()).build();
     }
 
     public static <T> RestResult<T> failed(RestCode restCode) {
-        return RestResult.<T>builder().code(restCode.getCode()).msg(restCode.getMsg()).build();
+        return RestResult.<T>builder().code(restCode.getCode()).message(restCode.getMsg()).build();
     }
 
     public static <T> RestResult<T> failed(int code, T data, String errMsg) {
-        return RestResult.<T>builder().code(code).data(data).msg(errMsg).build();
+        return RestResult.<T>builder().code(code).data(data).message(errMsg).build();
     }
 
     public static <T> RestResult<T> failedWithMsg(int code, String errMsg) {
-        return RestResult.<T>builder().code(code).msg(errMsg).build();
+        return RestResult.<T>builder().code(code).message(errMsg).build();
     }
 
     public static <T> RestResultBuilder<T> builder() {
@@ -121,7 +118,7 @@ public class RestResult<T> implements Serializable {
 
     public static final class RestResultBuilder<T> {
         private int code;
-        private String msg;
+        private String message;
         private T data;
 
         private RestResultBuilder() {}
@@ -131,8 +128,8 @@ public class RestResult<T> implements Serializable {
             return this;
         }
 
-        public RestResultBuilder<T> msg(String errMsg) {
-            this.msg = errMsg;
+        public RestResultBuilder<T> message(String message) {
+            this.message = message;
             return this;
         }
 
@@ -144,7 +141,7 @@ public class RestResult<T> implements Serializable {
         public RestResult<T> build() {
             RestResult<T> restResult = new RestResult<>();
             restResult.setCode(code);
-            restResult.setMsg(msg);
+            restResult.setMessage(message);
             restResult.setData(data);
             return restResult;
         }
