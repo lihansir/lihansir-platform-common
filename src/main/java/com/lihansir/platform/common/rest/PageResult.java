@@ -41,10 +41,6 @@ public class PageResult<T> implements Serializable {
      */
     private List<T> data;
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
     public float getTotal() {
         return total;
     }

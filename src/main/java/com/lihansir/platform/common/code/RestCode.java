@@ -11,8 +11,8 @@ package com.lihansir.platform.common.code;
  */
 public interface RestCode {
 
-    int getCode();
+    String getErrorCode();
 
-    String getMsg();
+    String getErrorMessage();
 
 }

@@ -16,53 +16,52 @@ public class BusinessException extends RuntimeException {
 
     private static final long serialVersionUID = -2714635136932653280L;
 
-    private int code;
+    private String errorCode;
 
-    private String msg;
+    private String errorMessage;
 
-    public BusinessException(String msg) {
-        super(msg);
-        this.code = CommonCode.BUSINESS_EXECUTE_ERROR.getCode();
-        this.msg = msg;
+    public BusinessException(String errorMessage) {
+        super(errorMessage);
+        this.errorCode = CommonCode.BUSINESS_EXECUTE_ERROR.getErrorCode();
+        this.errorMessage = errorMessage;
     }
 
-    public BusinessException(int code, String msg) {
-        super(msg);
-        this.code = code;
-        this.msg = msg;
+    public BusinessException(String errorCode, String errorMessage) {
+        super(errorMessage);
+        this.errorCode = errorCode;
+        this.errorMessage = errorMessage;
     }
 
     public BusinessException(RestCode code) {
-        super(code.getMsg());
-        this.code = code.getCode();
-        this.msg = code.getMsg();
+        super(code.getErrorMessage());
+        this.errorCode = code.getErrorCode();
+        this.errorMessage = code.getErrorMessage();
     }
 
     public BusinessException(Throwable cause, RestCode code) {
         super(cause);
-        this.code = code.getCode();
-        this.msg = code.getMsg();
+        this.errorCode = code.getErrorCode();
+        this.errorMessage = code.getErrorMessage();
     }
 
-    public int getCode() {
-        return code;
+    public String getErrorCode() {
+        return errorCode;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getErrorMessage() {
+        return errorMessage;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 
     @Override
     public String toString() {
-        return "BusinessException{" + "code=" + code + ", msg='" + msg + '\'' + '}';
+        return "BusinessException{" + "errorCode='" + errorCode + '\'' + ", errorMessage='" + errorMessage + '\'' + '}';
     }
-
 }

@@ -7,13 +7,13 @@ package com.lihansir.platform.common.constant;
  */
 public class CommonConstant {
 
-    public static final String REST_RESPONSE_CODE = "code";
+    public static final String REST_RESPONSE_ERROR_CODE = "errorCode";
 
-    public static final String REST_RESPONSE_MESSAGE = "message";
+    public static final String REST_RESPONSE_ERROR_MESSAGE = "errorMessage";
 
     public static final String REST_RESPONSE_DATA = "data";
 
-    public static final String PAGE_REQUEST_PAGE_NO = "pageNo";
+    public static final String PAGE_REQUEST_CURRENT_PAGE = "currentPage";
 
     public static final String PAGE_REQUEST_DEFAULT_PAGE = "1";
 

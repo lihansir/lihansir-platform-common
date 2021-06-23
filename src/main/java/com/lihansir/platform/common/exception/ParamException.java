@@ -16,57 +16,49 @@ public class ParamException extends RuntimeException {
 
     private static final long serialVersionUID = 3496354170767422449L;
 
-    private int code = CommonCode.PARAM_CHECK_ERROR.getCode();
+    private String errorCode = CommonCode.PARAM_CHECK_ERROR.getErrorCode();
 
-    private String msg;
+    private String errorMessage;
 
-    public ParamException(String msg) {
-        super(msg);
-        this.msg = msg;
+    public ParamException(String errorMessage) {
+        super(errorMessage);
+        this.errorMessage = errorMessage;
     }
 
-    public ParamException(String paramName, String errMsg) {
-        super("Parameter：【" + paramName + "】" + errMsg);
-        this.msg = "Parameter：【" + paramName + "】" + errMsg;
-
+    public ParamException(String paramName, String errorMessage) {
+        super("Parameter：【" + paramName + "】" + errorMessage);
+        this.errorMessage = "Parameter：【" + paramName + "】" + errorMessage;
     }
 
     public ParamException(RestCode restCode) {
-        super(restCode.getMsg());
-        this.code = restCode.getCode();
-        this.msg = restCode.getMsg();
+        super(restCode.getErrorMessage());
+        this.errorCode = restCode.getErrorCode();
+        this.errorMessage = restCode.getErrorMessage();
     }
 
-    public ParamException(int code, String errMsg) {
-        super(errMsg);
-        this.code = code;
-        this.msg = errMsg;
-    }
-
-    public ParamException(Throwable cause, String msg) {
+    public ParamException(Throwable cause, String errorMessage) {
         super(cause);
-        this.msg = msg;
+        this.errorMessage = errorMessage;
     }
 
-    public int getCode() {
-        return code;
+    public String getErrorCode() {
+        return errorCode;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getErrorMessage() {
+        return errorMessage;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 
     @Override
     public String toString() {
-        return "ParamException{" + "code=" + code + ", msg='" + msg + '\'' + '}';
+        return "ParamException{" + "errorCode='" + errorCode + '\'' + ", errorMessage='" + errorMessage + '\'' + '}';
     }
-
 }
