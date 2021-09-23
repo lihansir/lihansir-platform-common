@@ -7,6 +7,8 @@ package com.lihansir.platform.common.constant;
  */
 public class CommonConstant {
 
+    public static final String REST_RESPONSE_STATUS = "success";
+
     public static final String REST_RESPONSE_ERROR_CODE = "errorCode";
 
     public static final String REST_RESPONSE_ERROR_MESSAGE = "errorMessage";

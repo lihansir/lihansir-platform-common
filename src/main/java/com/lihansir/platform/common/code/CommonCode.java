@@ -11,23 +11,19 @@ package com.lihansir.platform.common.code;
  */
 public enum CommonCode implements RestCode {
 
-    FAILED("500", "failed"),
+    FAILED("request_failed", "failed"),
 
-    ERROR_TOKEN("40001", "Token verification failed"),
+    PARAM_CHECK_ERROR("param_check_error", "Parameter verification failed"),
 
-    PARAM_CHECK_ERROR("40002", "Parameter verification failed"),
+    SERVLET_ERROR("bad_request", "Bad request"),
 
-    REQUEST_METHOD_ERROR("40003", "Unsupported request method"),
+    ERROR_URL("request_path_not_found", "Request path error"),
 
-    ERROR_URL("40004", "Request path error"),
+    BUSINESS_EXECUTE_ERROR("business_execute_error", "Business logic processing exception"),
 
-    BUSINESS_EXECUTE_ERROR("40005", "Business logic processing exception"),
+    ILLEGAL_ARGUMENT_ERROR("illegal_argument_error", "Illegal argument error"),
 
-    ILLEGAL_ARGUMENT_ERROR("40006", "Illegal argument error"),
-
-    SERVER_ERROR("50000", "Server error"),
-
-    REDIRECT_ERROR("50001", "Error in request redirection");
+    PROGRAM_EXECUTION_EXCEPTION("program_execution_exception", "Program execution exception");
 
     private final String errorCode;
 

@@ -19,12 +19,12 @@ public class RestResult<T> implements Serializable {
 
     private boolean success = true;
     private T data;
-    private String errorCode = "";
-    private String errorMessage = "";
+    private String errorCode = "success";
+    private String errorMessage = "success";
     /**
      * error display type： 0 silent; 1 message.warn; 2 message.error; 4 notification; 9 page
      */
-    private int showType = 2;
+    private int showType = 4;
     private String traceId = "";
     private String host = "";
 
@@ -140,16 +140,16 @@ public class RestResult<T> implements Serializable {
     }
 
     public static final class RestResultBuilder<T> {
-        private boolean success;
+        private boolean success = true;
         private T data;
-        private String errorCode;
-        private String errorMessage;
+        private String errorCode = "success";
+        private String errorMessage = "success";
         /**
          * error display type： 0 silent; 1 message.warn; 2 message.error; 4 notification; 9 page
          */
-        private int showType;
-        private String traceId;
-        private String host;
+        private int showType = 4;
+        private String traceId = "";
+        private String host = "";
 
         private RestResultBuilder() {}
 
