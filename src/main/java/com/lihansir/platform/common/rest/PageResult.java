@@ -19,57 +19,57 @@ public class PageResult<T> implements Serializable {
     /**
      * Total data
      */
-    private float total;
+    private long total;
 
     /**
      * Current page number
      */
-    private int currentPage;
+    private long currentPage;
 
     /**
      * Current number of items per page
      */
-    private int pageSize;
+    private long pageSize;
 
     /**
      * PageCount
      */
-    private int totalPage;
+    private long totalPage;
 
     /**
      * data
      */
     private List<T> data;
 
-    public float getTotal() {
+    public long getTotal() {
         return total;
     }
 
-    public void setTotal(float total) {
+    public void setTotal(long total) {
         this.total = total;
     }
 
-    public int getCurrentPage() {
+    public long getCurrentPage() {
         return currentPage;
     }
 
-    public void setCurrentPage(int currentPage) {
+    public void setCurrentPage(long currentPage) {
         this.currentPage = currentPage;
     }
 
-    public int getPageSize() {
+    public long getPageSize() {
         return pageSize;
     }
 
-    public void setPageSize(int pageSize) {
+    public void setPageSize(long pageSize) {
         this.pageSize = pageSize;
     }
 
-    public int getTotalPage() {
+    public long getTotalPage() {
         return totalPage;
     }
 
-    public void setTotalPage(int totalPage) {
+    public void setTotalPage(long totalPage) {
         this.totalPage = totalPage;
     }
 
@@ -87,30 +87,30 @@ public class PageResult<T> implements Serializable {
 
     public static final class PageResultBuilder<T> {
 
-        private float total;
-        private int currentPage;
-        private int pageSize;
-        private int totalPage;
+        private long total;
+        private long currentPage;
+        private long pageSize;
+        private long totalPage;
         private List<T> data;
 
         private PageResultBuilder() {}
 
-        public PageResultBuilder<T> total(float total) {
+        public PageResultBuilder<T> total(long total) {
             this.total = total;
             return this;
         }
 
-        public PageResultBuilder<T> currentPage(int currentPage) {
+        public PageResultBuilder<T> currentPage(long currentPage) {
             this.currentPage = currentPage;
             return this;
         }
 
-        public PageResultBuilder<T> pageSize(int pageSize) {
+        public PageResultBuilder<T> pageSize(long pageSize) {
             this.pageSize = pageSize;
             return this;
         }
 
-        public PageResultBuilder<T> totalPage(int totalPage) {
+        public PageResultBuilder<T> totalPage(long totalPage) {
             this.totalPage = totalPage;
             return this;
         }
