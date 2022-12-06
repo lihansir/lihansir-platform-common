@@ -190,13 +190,13 @@ public class RestResult<T> implements Serializable {
 
         public RestResult<T> build() {
             RestResult<T> restResult = new RestResult<>();
-            restResult.setSuccess(success);
-            restResult.setData(data);
-            restResult.setErrorCode(errorCode);
-            restResult.setErrorMessage(errorMessage);
-            restResult.setShowType(showType);
-            restResult.setTraceId(traceId);
-            restResult.setHost(host);
+            restResult.setSuccess(this.success);
+            restResult.setData(this.data);
+            restResult.setErrorCode(this.errorCode);
+            restResult.setErrorMessage(this.errorMessage);
+            restResult.setShowType(this.showType);
+            restResult.setTraceId(this.traceId);
+            restResult.setHost(this.host);
             return restResult;
         }
     }

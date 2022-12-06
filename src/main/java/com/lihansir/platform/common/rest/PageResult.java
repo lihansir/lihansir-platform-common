@@ -122,11 +122,11 @@ public class PageResult<T> implements Serializable {
 
         public PageResult<T> build() {
             PageResult<T> pageResult = new PageResult<>();
-            pageResult.setTotal(total);
-            pageResult.setCurrentPage(currentPage);
-            pageResult.setPageSize(pageSize);
-            pageResult.setTotalPage(totalPage);
-            pageResult.setData(data);
+            pageResult.setTotal(this.total);
+            pageResult.setCurrentPage(this.currentPage);
+            pageResult.setPageSize(this.pageSize);
+            pageResult.setTotalPage(this.totalPage);
+            pageResult.setData(this.data);
             return pageResult;
         }
     }
